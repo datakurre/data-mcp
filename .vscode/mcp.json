@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "data": {
+      "type": "stdio",
+      "command": "nix",
+      "args": ["run", "/workspaces/data-mcp"]
+    }
+  }
+}

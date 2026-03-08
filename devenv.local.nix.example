@@ -1,0 +1,19 @@
+{
+  profiles.devcontainer.module = {
+    devcontainer.enable = true;
+    devcontainer.tweaks = [
+      "gpg-agent"
+      "podman"
+      "vscode"
+    ];
+    devcontainer.settings.customizations.vscode.extensions = [
+      "GitHub.copilot"
+      "GitHub.copilot-chat"
+      "jnoortheen.nix-ide"
+      "vscodevim.vim"
+    ];
+    devcontainer.vsix = [
+      "https://github.com/datakurre/devenv-vscode/releases/download/v0.1.0/devenv-0.1.0.vsix"
+    ];
+  };
+}

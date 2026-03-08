@@ -1,0 +1,51 @@
+[project]
+name = "data-mcp"
+version = "0.1.0"
+description = "MCP server for importing, manipulating, and exporting tabular data (CSV/XLSX) with pandas"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "click>=8.3.1",
+    "fastmcp>=3.1.0",
+    "mcp[cli]>=1.26.0",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.1",
+    "tabulate>=0.10.0",
+    "xlsxwriter>=3.2.9",
+]
+
+[project.scripts]
+data-mcp = "data_mcp:mcp.run"
+
+[tool.uv.sources]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[dependency-groups]
+dev = [
+    "black>=26.3.0",
+    "isort>=8.0.1",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.coverage.run]
+source = ["data_mcp"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+omit = ["tests/*"]
+
+[tool.isort]
+profile = "black"
+src_paths = ["src", "tests"]
+
+[tool.black]
+line-length = 88
+target-version = ["py314"]
